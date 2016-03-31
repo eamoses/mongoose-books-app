@@ -31,19 +31,35 @@
             <label for="title">Author</label>
             <input type="text" class="form-control" name="author" placeholder="Book author">
           </div>
+          <!-- <div class="form-group">
+            <label for="title">Characters</label>
+            <input type="text" class="form-control" name="characters[name]" placeholder="Book character 1">
+            <input type="text" class="form-control" name="characters[name]" placeholder="Book character 2">
+          </div> -->
           <button type="submit" class="btn btn-default">Create book</button>
         </form>
         <div id='bookTarget'>
           <!-- handlebars template -->
           <script id="books-template" type="text/x-handlebars-template">
-            {{#each books}}
+            <!-- {{#each books}} -->
             <hr>
             <p>
               <b>{{title}}</b>
-              by {{author}}
+              by {{author.name}}
+              <br>
+              <!-- <b>Characters:</b> -->
+              <!-- {{#each characters}} -->
+                <!-- {{name}} -->
+              <!-- {{/each}} -->
               <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
             </p>
-            {{/each}}
+            <!-- <form class="form-inline" id="addCharacterForm" data-id={{_id}}>
+              <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Book character">
+              </div>
+              <button type="submit" class="btn btn-default">Add character</button>
+            </form>
+            {{/each}} -->
           </script>
         </div>
       </div>
